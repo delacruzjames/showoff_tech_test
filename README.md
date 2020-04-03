@@ -26,7 +26,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * Widgets - User Widget Management
     * List (Own)
     * List (Own) with a Search Term
-    * List (User ID) 
+    * List (User ID)
     * List (User ID) with a Search Term
   * Create User
   * Update User
@@ -44,12 +44,12 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * Update Widget
   * Destroy Widget
   * List Widgets (Own)
-  
+
 # Technical Test
 ## Ruby on Rails Application
 
 Please build a Ruby on Rails application which fulfils the following requirements:
-~* Rails 4, 5, or 6~
+* ~Rails 4, 5, or 6~
 * Include an API Client for the widget
 * General:
   * Use any Gems/techniques you find useful.
