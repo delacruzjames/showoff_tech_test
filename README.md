@@ -49,7 +49,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
 ## Ruby on Rails Application
 
 Please build a Ruby on Rails application which fulfils the following requirements:
-* Rails 4, 5, or 6
+~* Rails 4, 5, or 6~
 * Include an API Client for the widget
 * General:
   * Use any Gems/techniques you find useful.
