@@ -16,7 +16,32 @@ Please see https://documenter.getpostman.com/view/263900/RztoL8FR for details of
 This provides illustrative examples of each of the endpoints, as well as the Client ID and Client Secret you will
 need in order to interact with the API.
 The Widget API we have exposed offers the following endpoints, as follows:
--- Authentication - Standard OAuth
-- Create Access Token
-- Revoke Access Token
-- Refresh Access Token
+
+* Authentication - Standard OAuth
+  * Create Access Token
+  * Revoke Access Token
+  * Refresh Access Token
+
+* Users - User Management
+  * Widgets - User Widget Management
+    * List (Own)
+    * List (Own) with a Search Term
+    * List (User ID) 
+    * List (User ID) with a Search Term
+  * Create User
+  * Update User
+  * Show (Logged In User)
+  * Show (User ID)
+  * Change Password
+  * Check Email
+  * Reset Password
+* Widgets
+  * Visible (Public)
+    * List
+    * List with search term
+  * Create Widget (Hidden)
+  * Create Widget (Visible)
+  * Update Widget
+  * Destroy Widget
+  * List Widgets (Own)
+  
