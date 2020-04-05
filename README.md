@@ -64,7 +64,7 @@ all actions of the Widget API:
     * Widget Views & Search
 * Structure
   * ~Landing Page should present a list of Visible Widgets~
-    * This should be searchable, using the API.
+    * ~This should be searchable, using the API.~
   * Allow Users to Login/Logout/Register/Reset Password via Modal.
   * On the landing page, each item in the list of Widgets should include a reference to the User that
 created it.
