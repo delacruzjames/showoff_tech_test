@@ -6,7 +6,7 @@ module ShowOffApi::WidgetsService
             "widgets/visible", {
               client_id: ENV["CLIENT_ID"],
               client_secret: ENV["CLIENT_SECRET"],
-              term: args.empty? ? args.join(",") : nil
+              term: args.empty? ? nil : args.join(",")
               }
             )
         end

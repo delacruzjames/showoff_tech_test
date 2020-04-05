@@ -1,18 +1,28 @@
+<%= form_tag root_path, method: :get do %>
+  <%= label_tag(:search, "Search widgets") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", name: nil)%>
+<% end %>
+
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Kind</th>
+      <th scope="col">User</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
+    <% @widgets.each do |widget| %>
+      <tr>
+        <th scope="row"><%= widget['name'] %></th>
+        <td><%= widget['name'] %></td>
+        <td><%= widget['description'] %></td>
+        <td><%= widget['kind'] %></td>
+        <td><%= widget['user']['name'] %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
