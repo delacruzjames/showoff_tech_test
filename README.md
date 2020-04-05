@@ -37,8 +37,8 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * Reset Password
 * Widgets
   * Visible (Public)
-    * List
-    * List with search term
+    * ~List~
+    * ~List with search term~
   * Create Widget (Hidden)
   * Create Widget (Visible)
   * Update Widget
