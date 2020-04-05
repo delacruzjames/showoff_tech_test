@@ -1,5 +1,5 @@
-module ShowOffApi
-  class VisibleRequestService < ShowOffApi::BaseService
+module ShowOffApi::Visible
+  class RequestService < ShowOffApi::BaseService
     class << self
       def get_json(path, query={})
         query_string = query.map{|k,v| "#{k}=#{v}"}.join("&")
@@ -9,7 +9,7 @@ module ShowOffApi
       end
 
       def api
-        ShowOffApi::ConnectionService.visible_api
+        ShowOffApi::Visible::ConnectionService.api
       end
     end
   end
