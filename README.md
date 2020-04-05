@@ -28,7 +28,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
     * List (Own) with a Search Term
     * List (User ID)
     * List (User ID) with a Search Term
-  * Create User
+  * ~Create User~
   * Update User
   * Show (Logged In User)
   * Show (User ID)
