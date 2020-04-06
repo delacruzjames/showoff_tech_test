@@ -18,7 +18,7 @@ need in order to interact with the API.
 The Widget API we have exposed offers the following endpoints, as follows:
 
 * Authentication - Standard OAuth
-  * Create Access Token
+  * ~Create Access Token~
   * Revoke Access Token
   * Refresh Access Token
 
@@ -30,7 +30,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
     * List (User ID) with a Search Term
   * ~Create User~
   * Update User
-  * Show (Logged In User)
+  * ~Show (Logged In User)~
   * Show (User ID)
   * Change Password
   * Check Email
@@ -53,8 +53,8 @@ Please build a Ruby on Rails application which fulfils the following requirement
 * Include an API Client for the widget
 * General:
   * Use any Gems/techniques you find useful.
-  * We would recommend using the rest-client Gem for building your API client, but feel free to use any
-other library that you have experience with.
+  * ~We would recommend using the rest-client Gem for building your API client, but feel free to use any
+other library that you have experience with.~
   * Include a thorough Readme describing how to build/run your application.
 * Functionality
   * Allows Users to interact with the widgets API defined as above, through which it allows them to use
@@ -65,9 +65,9 @@ all actions of the Widget API:
 * Structure
   * ~Landing Page should present a list of Visible Widgets~
     * ~This should be searchable, using the API.~
-  * Allow Users to Login/Logout/Register/Reset Password via Modal.
-  * On the landing page, each item in the list of Widgets should include a reference to the User that
-created it.
+  * ~Allow Users to Login/Logout/Register/Reset Password via Modal.~
+  * ~On the landing page, each item in the list of Widgets should include a reference to the User that
+created it.~
   * Once logged in the User should be able to navigate to a view of their Widgets.
     * They should also be able to create a new widget from this view.
 * Bonus Round:
