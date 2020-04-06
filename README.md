@@ -39,8 +39,8 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * Visible (Public)
     * ~List~
     * ~List with search term~
-  * Create Widget (Hidden)
-  * Create Widget (Visible)
+  * ~Create Widget (Hidden)~
+  * ~Create Widget (Visible)~
   * Update Widget
   * Destroy Widget
   * List Widgets (Own)
