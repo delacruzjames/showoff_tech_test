@@ -1,31 +1,28 @@
 <div class="modal fade" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+      <%= form_tag sessions_path, method: :post do %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       <div class="modal-body">
-        <%= form_tag dashboard_path, method: :post do %>
-          <div class="fields">
-            <%= label_tag(:email, "Email") %>
-            <%= text_field_tag :email, params[:email] %>
-          </div>
-          <div class="fields">
-            <%= label_tag(:password, "Password") %>
-            <%= text_field_tag :password, params[:password] %>
-          </div>
-          <div class="fields">
-            <%= submit_tag("Login")%>
-          </div>
-        <% end %>
+        <div class="fields">
+          <%= label_tag(:username, "Email or Username") %>
+          <%= text_field_tag :username, params[:username] %>
+        </div>
+        <div class="fields">
+          <%= label_tag(:password, "Password") %>
+          <%= password_field_tag :password, params[:password] %>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= submit_tag "Login", class: "btn btn-primary" %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

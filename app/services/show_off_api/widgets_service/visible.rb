@@ -3,7 +3,7 @@ module ShowOffApi::WidgetsService
       class << self
         def index(*args)
           ShowOffApi::Visible::RequestService.get_json(
-            "widgets/visible", {
+            "api/v1/widgets/visible", {
               client_id: ENV["CLIENT_ID"],
               client_secret: ENV["CLIENT_SECRET"],
               term: args.empty? ? nil : args.join(",")

@@ -1,7 +1,7 @@
 module ShowOffApi::Visible
   class ConnectionService < ShowOffApi::BaseService
     class << self
-      ENV["CLIENT_URL"] = "https://showoff-rails-react-production.herokuapp.com/api/v1"
+      ENV["CLIENT_URL"] = "https://showoff-rails-react-production.herokuapp.com"
 
       def api
         Faraday.new(url: ENV["CLIENT_URL"]) do |faraday|
