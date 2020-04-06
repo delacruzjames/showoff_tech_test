@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 gem 'faraday'
+gem 'dotenv-rails'
 gem 'httparty'
 gem 'bootstrap', '~> 4.4.1'
 gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'

@@ -4,11 +4,12 @@ class UsersController < ApplicationController
     @request = @user.signup
     if @request.last == 200
       flash[:notice] = "success"
-      session[:user_data] = @request.first['data']
+      session[:access_token] = @request.first['data']['token']['access_token']
+      redirect_to dashboard_path
     else
       flash[:error] = "Error"
+      redirect_to root_path
     end
-    redirect_to root_path
   end
 
   private

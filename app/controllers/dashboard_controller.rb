@@ -6,6 +6,10 @@ class DashboardController < ApplicationController
     @widgets = @request.first['data']['widgets']
   end
 
+  def me
+    
+  end
+
 
   private
     def authenticate_user!
