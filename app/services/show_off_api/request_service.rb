@@ -13,7 +13,7 @@ module ShowOffApi
 
       def where(resource_path, query = {}, options = {})
         response, status = get_json(resource_path, query)
-        status == 200 ? response : errors(response)
+        status == 200 ? success(response) : errors(response)
       end
 
       def errors(response)
@@ -22,8 +22,13 @@ module ShowOffApi
       end
 
       def success(response)
-        success = { status: 200, message: response["message"] }
-        response = response['data']['widget']
+        if response['data']['widget'].present?
+          success = { status: 200, message: response["message"] }
+          response = response['data']['widget']
+        else
+          success = { access_token: response['data']['token']['access_token'], refresh_token: response['data']['token']['refresh_token'] }
+          response = response['data']['user']
+        end
         response.merge(success)
       end
 
