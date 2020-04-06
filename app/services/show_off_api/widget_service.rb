@@ -24,6 +24,12 @@ module ShowOffApi
         response = ShowOffApi::RequestService.create('api/v1/widgets', params, options)
         WidgetService.new(response)
       end
+
+      def update(id, params, options)
+        response = ShowOffApi::RequestService.update("api/v1/widgets/#{id}", params, options)
+
+        WidgetService.new(response)
+      end
     end
   end
 end

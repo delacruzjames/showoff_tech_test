@@ -1,6 +1,11 @@
 module ShowOffApi
   class RequestService < ShowOffApi::BaseService
     class << self
+      def update(resource_path, query = {}, options = {})
+        response, status = put_json(resource_path, query, options)
+        status == 200 ? success(response) : errors(response)
+      end
+
       def create(resource_path, query = {}, options = {})
         response, status = post_json(resource_path, query, options)
         status == 200 ? success(response) : errors(response)
@@ -42,6 +47,15 @@ module ShowOffApi
             req.headers['Content-Type'] = 'application/json'
             req.body = params.to_json
           end
+        end
+        [JSON.parse(response.body), response.status]
+      end
+
+      def put_json(path, params={}, options={})
+        response = api_with_token(options[:token]).put do |req|
+          req.url path
+          req.headers['Content-Type'] = 'application/json'
+          req.body = params.to_json
         end
         [JSON.parse(response.body), response.status]
       end
