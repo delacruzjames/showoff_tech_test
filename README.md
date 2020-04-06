@@ -24,10 +24,10 @@ The Widget API we have exposed offers the following endpoints, as follows:
 
 * Users - User Management
   * Widgets - User Widget Management
-    * List (Own)
-    * List (Own) with a Search Term
-    * List (User ID)
-    * List (User ID) with a Search Term
+    * ~List (Own)~
+    * ~List (Own) with a Search Term~
+    * ~List (User ID)~
+    * ~List (User ID) with a Search Term~
   * ~Create User~
   * Update User
   * ~Show (Logged In User)~
@@ -42,8 +42,8 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * ~Create Widget (Hidden)~
   * ~Create Widget (Visible)~
   * ~Update Widget~
-  * Destroy Widget
-  * List Widgets (Own)
+  * ~Destroy Widget~
+  * ~List Widgets (Own)~
 
 # Technical Test
 ## Ruby on Rails Application
