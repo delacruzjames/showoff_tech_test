@@ -10,11 +10,9 @@ module ShowOffApi::Authorized
         [JSON.parse(response.body), response.status]
       end
 
-      def get_json(path, query={})
-        query_string = query.map{|k,v| "#{k}=#{v}"}.join("&")
-        path = query.empty? ? path : "#{path}?#{query_string}"
+      def get_json(path, access_token)
         response = Rails.cache.fetch(path, expires_in: 1.days, force: false) do
-          api.get(path)
+          api(access_token).get(path)
         end
         [JSON.parse(response.body), response.status]
       end

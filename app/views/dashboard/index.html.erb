@@ -1,5 +1,28 @@
-<div class="page-header">
-  <h1>Dashboard#index</h1>
+<div class="widgets-apge">
+  <div class="page-header">
+    <h1>Widgets</h1>
+  </div>
+
+  <table class="table table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Kind</th>
+        <th scope="col">User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @widgets.each do |widget| %>
+        <tr>
+          <th scope="row"><%= widget['name'] %></th>
+          <td><%= widget['name'] %></td>
+          <td><%= widget['description'] %></td>
+          <td><%= widget['kind'] %></td>
+          <td><%= widget['user']['name'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-<p>Find me in app/views/dashboard/index.html.erb</p>
-<%= link_to "Sign Out", sign_out_path, method: :delete %>
