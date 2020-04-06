@@ -1,6 +1,11 @@
 module ShowOffApi
   class RequestService < ShowOffApi::BaseService
     class << self
+      def create(resource_path, query = {}, options = {})
+        response, status = post_json(resource_path, query, options)
+        status == 200 ? success(response) : errors(response)
+      end
+
       def where(resource_path, query = {}, options = {})
         response, status = get_json(resource_path, query)
         status == 200 ? response : errors(response)
@@ -9,6 +14,12 @@ module ShowOffApi
       def errors(response)
         error = { errors: { status: response["status"], message: response["message"] } }
         response.merge(error)
+      end
+
+      def success(response)
+        success = { status: 200, message: response["message"] }
+        response = response['data']['widget']
+        response.merge(success)
       end
 
       def get_json(root_path, query = {})

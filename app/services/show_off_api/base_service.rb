@@ -6,7 +6,7 @@ module ShowOffApi
   ENV["CLIENT_SECRET"] = 'd6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352'
   class BaseService
     attr_accessor :errors
-    
+
     def initialize(args = {})
       args.each do |name, value|
         attr_name = name.to_s.underscore
