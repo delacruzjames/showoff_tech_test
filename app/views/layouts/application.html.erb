@@ -27,20 +27,22 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "SHOW OFF API", "#", class: "navbar-brand" %>
+        <%= link_to "SHOW OFF API", dashboard_path, class: "navbar-brand" %>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Widgets</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="active"><a href="/">Widgets</a></li>
+          <% unless user_signed_in? %>
+            <li><a href="#" data-toggle="modal" data-target="#loginForm">Login</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#signupForm">Signup</a></li>
+          <% end %>
         </ul>
       </div>
     </div>
   </nav>
   <div class="container">
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
+      <%= content_tag :div, class: "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable", role: "alert" do %>
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <%= msg %>
       <% end %>
