@@ -7,7 +7,7 @@ module ShowOffApi
 
   class BaseService
     def initialize(args = {})
-      # binding.pry
+      #binding.pry
     end
   end
 end

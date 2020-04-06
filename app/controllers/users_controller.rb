@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   def create
-    user_params = { client_id: ENV['CLIENT_ID'], client_secret: ENV['CLIENT_SECRET'], user: user_permitted_params }
-    @request = ShowOffApi::UserService.signup(user_params)
-
+    @user = ShowOffApi::UserService.new(user: user_permitted_params)
+    @request = @user.signup
     if @request.last == 200
       flash[:notice] = "success"
+      session[:user_data] = @request.first['data']
     else
-      flash[:alert] = "Error"
+      flash[:error] = "Error"
     end
     redirect_to root_path
   end

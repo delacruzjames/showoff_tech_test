@@ -1,11 +1,16 @@
 module ShowOffApi
   class UserService < ShowOffApi::BaseService
-    class << self
-      # Create user
-      def signup(params={})
-        ShowOffApi::Visible::RequestService.post_json('api/v1/users', params)
-      end
+    def initialize(params={})
+      params[:client_id] = ENV["CLIENT_ID"]
+      params[:client_secret] = ENV["CLIENT_SECRET"]
+      @params = params
+    end
 
+    def signup
+      ShowOffApi::Visible::RequestService.post_json('api/v1/users', @params)
+    end
+    
+    class << self
       def login(params={})
         ShowOffApi::Visible::RequestService.post_json('oauth/token', params)
       end
