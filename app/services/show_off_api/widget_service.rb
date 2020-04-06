@@ -27,8 +27,11 @@ module ShowOffApi
 
       def update(id, params, options)
         response = ShowOffApi::RequestService.update("api/v1/widgets/#{id}", params, options)
-
         WidgetService.new(response)
+      end
+
+      def destroy(id, options)
+        ShowOffApi::RequestService.delete("api/v1/widgets/#{id}", options)
       end
     end
   end

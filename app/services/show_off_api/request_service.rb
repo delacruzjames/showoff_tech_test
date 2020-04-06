@@ -34,6 +34,14 @@ module ShowOffApi
         [JSON.parse(response.body), response.status]
       end
 
+      def delete(path, options={})
+        response = api_with_token(options[:token]).delete do |req|
+          req.url path
+          req.headers['Content-Type'] = 'application/json'
+        end
+        response = { mesage: JSON.parse(response.body)['message'], status: response.status }
+      end
+
       def post_json(path, params = {}, options={})
         if options[:token].present?
           response = api_with_token(options[:token]).post do |req|
