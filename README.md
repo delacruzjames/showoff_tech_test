@@ -31,7 +31,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * ~Create User~
   * ~Update User~
   * ~Show (Logged In User)~
-  * Show (User ID)
+  * ~Show (User ID)~
   * Change Password
   * Check Email
   * Reset Password
