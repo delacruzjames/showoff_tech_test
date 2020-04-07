@@ -24,6 +24,24 @@ module ShowOffApi
         response = ShowOffApi::RequestService.put_json('api/v1/users/me', params, options)
         UserService.new(response.first.fetch('data').fetch('user'))
       end
+
+      def find(id, options)
+        response = ShowOffApi::RequestService.get_json_with_token("api/v1/users/#{id}", options)
+        UserService.new(response.first.fetch('data').fetch('user'))
+      end
+
+      def update_password(params, options)
+        response = ShowOffApi::RequestService.post_json("api/v1/users/me/password", params, options)
+        UserService.new(response.first.fetch('data').fetch('token'))
+      end
+
+      def check_email(params)
+        ShowOffApi::RequestService.get_json("api/v1/users/email", params)
+      end
+
+      def reset_password(params)
+        ShowOffApi::RequestService.post_json("api/v1/users/reset_password", params, {})
+      end
     end
   end
 end
