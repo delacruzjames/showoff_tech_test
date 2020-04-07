@@ -19,11 +19,6 @@ module ShowOffApi
         response = ShowOffApi::RequestService.get_json_with_token('api/v1/users/me', options)
         UserService.new(response.first.fetch('data').fetch('user'))
       end
-
-      def login(options)
-        response = ShowOffApi::RequestService.get_json_with_token('api/v1/users', options)
-        UserService.new(response)
-      end
     end
   end
 end
