@@ -39,6 +39,11 @@ module ShowOffApi
         [JSON.parse(response.body), response.status]
       end
 
+      def get_json_with_token(root_path, options)
+        response = api_with_token(options[:token]).get(root_path)
+        [JSON.parse(response.body), response.status]
+      end
+
       def delete(path, options={})
         response = api_with_token(options[:token]).delete do |req|
           req.url path

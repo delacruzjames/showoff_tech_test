@@ -15,13 +15,14 @@ module ShowOffApi
         UserService.new(response)
       end
 
-      def login(params={})
-        response = ShowOffApi::RequestService.create('api/v1/users', params, {})
-        UserService.new(response)
+      def current_user(options)
+        response = ShowOffApi::RequestService.get_json_with_token('api/v1/users/me', options)
+        UserService.new(response.first.fetch('data').fetch('user'))
       end
 
-      def current_user(token)
-        ShowOffApi::Authorized::RequestService.get_current_user('api/v1/users/me', token)
+      def login(options)
+        response = ShowOffApi::RequestService.get_json_with_token('api/v1/users', options)
+        UserService.new(response)
       end
     end
   end
