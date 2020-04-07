@@ -31,8 +31,7 @@ module ShowOffApi
       end
 
       def destroy(id, options)
-        response = ShowOffApi::RequestService.delete("api/v1/widgets/#{id}", options)
-        WidgetService.new(response)
+        ShowOffApi::RequestService.delete("api/v1/widgets/#{id}", options)
       end
     end
   end

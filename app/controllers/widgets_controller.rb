@@ -12,6 +12,12 @@ class WidgetsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def destroy
+    @widget = ShowOffApi::WidgetService.destroy(params[:id], token: session[:token])
+    flash[:message] = @widget[:mesage] if @widget[:status] == 200
+    redirect_to dashboard_path
+  end
+
   private
     def widget_permitted_params
       params.require(:widget).permit(:id, :name, :description, :kind)
