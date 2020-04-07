@@ -1,6 +1,7 @@
 module ShowOffApi
-  class WidgetService < ShowOffApi::BaseService
-    attr_accessor :id, :name, :description, :kind, :owner, :status, :message
+  class WidgetService < ShowOffApi::WidgetBaseService
+    attr_accessor :id, :name, :description, :kind,
+      :owner, :status, :message, :user
 
     # belongs_to :user, class_name: 'ShowOffApi::UserService'
 
@@ -10,7 +11,7 @@ module ShowOffApi
 
     class << self
       def index(*args)
-        response = ShowOffApi::RequestService.get_json(
+        response = ShowOffApi::RequestService.where(
           "api/v1/widgets/visible",
             {
               client_id: ENV["CLIENT_ID"],
@@ -18,7 +19,7 @@ module ShowOffApi
               term: args.empty? ? nil : args.join(",")
             }
           )
-        WidgetService.new(response)
+        response.fetch('data').fetch('widgets', []).map{|widget| WidgetService.new(widget)}
       end
 
       def save(params, options)

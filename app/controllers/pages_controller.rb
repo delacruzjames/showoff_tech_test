@@ -1,16 +1,14 @@
 class PagesController < ApplicationController
   def index
-    # @request = params[:search].present? ? widgets_with_term : widgets_without_term
-    # @widgets = @request.first['data']['widgets']
-    @widgets = []
+    @widgets = params[:search].present? ? widgets_with_term : widgets_without_term
   end
 
   private
     def widgets_with_term
-      # @request = ShowOffApi::WidgetsService::Visible.index(params[:search])
+      ShowOffApi::WidgetService.index(params[:search])
     end
 
     def widgets_without_term
-      # @request = ShowOffApi::WidgetsService::Visible.index
+      ShowOffApi::WidgetService.index
     end
 end
