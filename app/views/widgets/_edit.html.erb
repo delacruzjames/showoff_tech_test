@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="modal fade" id="<%= widget.id %>-widgetForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_tag widget_path(widget), method: :patch do %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">NEW WIDGET</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= hidden_field_tag 'widget[id]', "#{widget.id}" %>
+          <div class="fields">
+            <%= label_tag 'widget[name]', "Name" %>
+            <%= text_field_tag 'widget[name]', "#{widget.name}"  %>
+          </div>
+          <div class="fields">
+            <%= label_tag 'widget[description]', "Description" %>
+            <%= text_field_tag 'widget[description]', "#{widget.description}" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= submit_tag "SUBMIT", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

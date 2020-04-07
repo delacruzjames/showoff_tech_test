@@ -15,6 +15,7 @@
         <th scope="col">Description</th>
         <th scope="col">Kind</th>
         <th scope="col">User</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -25,6 +26,11 @@
           <td><%= widget.description %></td>
           <td><%= widget.kind %></td>
           <td><%= widget.user['name'] %></td>
+          <td>
+            <%= link_to "Edit", "widgets/#{widget.id}", "data-toggle" => 'modal', "data-target" => "##{widget.id}-widgetForm" %>
+            <%= link_to "Delete", "#" %>
+            <%= render 'widgets/edit', widget: widget %>
+          </td>
         </tr>
       <% end %>
     </tbody>

@@ -1,9 +1,9 @@
 module ShowOffApi
   class RequestService < ShowOffApi::BaseService
     class << self
-      def update(resource_path, query = {}, options = {})
-        response, status = put_json(resource_path, query, options)
-        status == 200 ? success(response) : errors(response)
+      def update(resource_path, params = {}, options = {})
+        response, status = put_json(resource_path, params, options)
+        status == 200 ? success(response, status) : errors(response, status)
       end
 
       def create(resource_path, params = {}, options = {})
