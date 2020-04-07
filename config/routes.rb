@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
   match "/dashboard", to: 'dashboard#index', via: [:get, :post]
-  match "/dashboard/me", to: 'dashboard#me', via: [:get]
   resources :users, only: [:index, :create]
   resources :sessions, only: :create
   match '/sign_out', to: 'sessions#destroy', via: [:get, :delete]

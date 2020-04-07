@@ -6,29 +6,27 @@ module ShowOffApi
         status == 200 ? success(response) : errors(response)
       end
 
-      def create(resource_path, query = {}, options = {})
-        response, status = post_json(resource_path, query, options)
-        status == 200 ? success(response) : errors(response)
+      def create(resource_path, params = {}, options = {})
+        response, status = post_json(resource_path, params, options)
+        status == 200 ? success(response, status) : errors(response, status)
       end
 
       def where(resource_path, query = {}, options = {})
-        response, status = get_json(resource_path, query)
-        status == 200 ? success(response) : errors(response)
+        if options[:token].present?
+          response, status = get_json_with_token(resource_path, options)
+        else
+          response, status = get_json(resource_path, query)
+        end
+        status == 200 ? success(response, status) : errors(response, status)
       end
 
-      def errors(response)
-        error = { errors: { status: response["status"], message: response["message"] } }
+      def errors(response, status)
+        error = { status: status }
         response.merge(error)
       end
 
-      def success(response)
-        if response['data']['widget'].present?
-          success = { status: 200, message: response["message"] }
-          response = response['data']['widget']
-        else
-          success = { access_token: response['data']['token']['access_token'], refresh_token: response['data']['token']['refresh_token'] }
-          response = response['data']['user']
-        end
+      def success(response, status)
+        success = { status: status, message: response["message"] }
         response.merge(success)
       end
 

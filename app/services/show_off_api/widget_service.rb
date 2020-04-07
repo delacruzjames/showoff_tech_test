@@ -10,7 +10,7 @@ module ShowOffApi
 
     class << self
       def index(*args)
-        ShowOffApi::RequestService.get_json(
+        response = ShowOffApi::RequestService.get_json(
           "api/v1/widgets/visible",
             {
               client_id: ENV["CLIENT_ID"],
@@ -18,6 +18,7 @@ module ShowOffApi
               term: args.empty? ? nil : args.join(",")
             }
           )
+        WidgetService.new(response)
       end
 
       def save(params, options)
@@ -31,7 +32,8 @@ module ShowOffApi
       end
 
       def destroy(id, options)
-        ShowOffApi::RequestService.delete("api/v1/widgets/#{id}", options)
+        response = ShowOffApi::RequestService.delete("api/v1/widgets/#{id}", options)
+        WidgetService.new(response)
       end
     end
   end
