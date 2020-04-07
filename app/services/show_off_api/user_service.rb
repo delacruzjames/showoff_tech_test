@@ -28,7 +28,7 @@ module ShowOffApi
       end
 
       def find(id, options)
-        response = ShowOffApi::RequestService.get_json_with_token("api/v1/users/#{id}", options)
+        response = ShowOffApi::RequestService.get_json_with_token("api/v1/users/#{id}", {}, options)
         UserService.new(response)
       end
 

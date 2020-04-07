@@ -1,10 +1,6 @@
 class DashboardController < ApplicationController
-  before_action :authenticate_user!
-
   def index
-    # @request = ShowOffApi::WidgetService.index(session[:access_token])
-    # @widgets = @request.first['data']['widgets']
-    @widgets = []
+    @widgets = params[:search].present? ? with_term : without_term
   end
 
   def me
@@ -13,10 +9,11 @@ class DashboardController < ApplicationController
 
 
   private
-    def authenticate_user!
-      unless user_signed_in?
-        flash[:error] = "Your session has expired. Please login again to continue."
-        redirect_to root_path
-      end
+    def with_term
+      ShowOffApi::WidgetService.index({term: params[:search]}, token: session[:token])
+    end
+
+    def without_term
+      ShowOffApi::WidgetService.index({}, token: session[:token])
     end
 end

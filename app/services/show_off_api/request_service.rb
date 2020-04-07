@@ -13,7 +13,7 @@ module ShowOffApi
 
       def where(resource_path, query = {}, options = {})
         if options[:token].present?
-          response, status = get_json_with_token(resource_path, options)
+          response, status = get_json_with_token(resource_path, query, options)
         else
           response, status = get_json(resource_path, query)
         end
@@ -37,8 +37,10 @@ module ShowOffApi
         [JSON.parse(response.body), response.status]
       end
 
-      def get_json_with_token(root_path, options)
-        response = api_with_token(options[:token]).get(root_path)
+      def get_json_with_token(root_path, query, options)
+        query_string = query.map{|k,v| "#{k}=#{v}"}.join("&")
+        path = query.empty? ? root_path : "#{root_path}?#{query_string}"
+        response = api_with_token(options[:token]).get(path)
         [JSON.parse(response.body), response.status]
       end
 
