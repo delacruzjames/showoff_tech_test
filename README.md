@@ -33,8 +33,8 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * ~Show (Logged In User)~
   * ~Show (User ID)~
   * ~Change Password~
-  * Check Email
-  * Reset Password
+  * ~Check Email~
+  * ~Reset Password~
 * Widgets
   * Visible (Public)
     * ~List~
