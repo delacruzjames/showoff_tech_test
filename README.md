@@ -32,7 +32,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * ~Update User~
   * ~Show (Logged In User)~
   * ~Show (User ID)~
-  * Change Password
+  * ~Change Password~
   * Check Email
   * Reset Password
 * Widgets
