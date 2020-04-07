@@ -1,7 +1,7 @@
 module ShowOffApi
   class UserService < ShowOffApi::BaseService
     attr_accessor :id, :name,  :first_name, :last_name, :date_of_birth,
-                  :email, :action, :access_token, :refresh_token
+                  :email, :action, :access_token, :refresh_token, :active
 
     def initialize(args={})
       super(args)
@@ -17,6 +17,11 @@ module ShowOffApi
 
       def current_user(options)
         response = ShowOffApi::RequestService.get_json_with_token('api/v1/users/me', options)
+        UserService.new(response.first.fetch('data').fetch('user'))
+      end
+
+      def update(params, options)
+        response = ShowOffApi::RequestService.put_json('api/v1/users/me', params, options)
         UserService.new(response.first.fetch('data').fetch('user'))
       end
     end
