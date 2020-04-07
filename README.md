@@ -29,7 +29,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
     * ~List (User ID)~
     * ~List (User ID) with a Search Term~
   * ~Create User~
-  * Update User
+  * ~Update User~
   * ~Show (Logged In User)~
   * Show (User ID)
   * Change Password
