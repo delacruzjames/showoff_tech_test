@@ -50,9 +50,9 @@ The Widget API we have exposed offers the following endpoints, as follows:
 
 Please build a Ruby on Rails application which fulfils the following requirements:
 * ~Rails 4, 5, or 6~
-* Include an API Client for the widget
-* General:
-  * Use any Gems/techniques you find useful.
+* ~Include an API Client for the widget~
+* ~General:~
+  * ~Use any Gems/techniques you find useful.~
   * ~We would recommend using the rest-client Gem for building your API client, but feel free to use any
 other library that you have experience with.~
   * Include a thorough Readme describing how to build/run your application.
@@ -71,7 +71,7 @@ created it.~
   * Once logged in the User should be able to navigate to a view of their Widgets.
     * They should also be able to create a new widget from this view.
 * Bonus Round:
-  * Deployed to Heroku.
+  * ~Deployed to Heroku.~
   * Full Test Suite (Minitest or RSpec).
   * Setup the build process so that it will allow for different sets of environment variables depending on
 the environment it is being deployed to.
