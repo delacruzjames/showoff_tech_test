@@ -19,7 +19,7 @@ The Widget API we have exposed offers the following endpoints, as follows:
 
 * Authentication - Standard OAuth
   * ~Create Access Token~
-  * Revoke Access Token
+  * ~Revoke Access Token~
   * Refresh Access Token
 
 * Users - User Management
