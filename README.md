@@ -17,13 +17,13 @@ This provides illustrative examples of each of the endpoints, as well as the Cli
 need in order to interact with the API.
 The Widget API we have exposed offers the following endpoints, as follows:
 
-* Authentication - Standard OAuth
+* ~Authentication - Standard OAuth~
   * ~Create Access Token~
   * ~Revoke Access Token~
   * ~Refresh Access Token~
 
-* Users - User Management
-  * Widgets - User Widget Management
+* ~Users - User Management~
+  * ~Widgets - User Widget Management~
     * ~List (Own)~
     * ~List (Own) with a Search Term~
     * ~List (User ID)~
@@ -35,8 +35,8 @@ The Widget API we have exposed offers the following endpoints, as follows:
   * ~Change Password~
   * ~Check Email~
   * ~Reset Password~
-* Widgets
-  * Visible (Public)
+* ~Widgets~
+  * ~Visible (Public)~
     * ~List~
     * ~List with search term~
   * ~Create Widget (Hidden)~
@@ -85,3 +85,7 @@ the environment it is being deployed to.
 
 # Best of luck
 ## OSU!
+
+# ========================================================================================================
+
+## To run this application
