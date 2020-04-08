@@ -52,12 +52,13 @@ class UsersController < ApplicationController
     @request = ShowOffApi::AuthenticateService.refresh_token(params, token: session[:token])
 
     if @request.status == 200
-      respond_to do |format|
-        format.html do
-          flash[:success] = @request.message
-        end
-        format.js
-      end
+      flash[:success] = @request.message
+      # respond_to do |format|
+      #   format.html do
+      #     flash[:success] = @request.message
+      #   end
+      #   format.js
+      # end
     else
       flash[:error] = @request.message
     end
