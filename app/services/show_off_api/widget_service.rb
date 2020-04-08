@@ -1,6 +1,6 @@
 module ShowOffApi
   class WidgetService < ShowOffApi::BaseService
-    attr_accessor :widgets
+    attr_accessor :widgets, :widget
 
     # belongs_to :user, class_name: 'ShowOffApi::UserService'
 
@@ -30,7 +30,8 @@ module ShowOffApi
       end
 
       def save(params, options)
-        ShowOffApi::RequestService.create('api/v1/widgets', params, options)
+        response = ShowOffApi::RequestService.create('api/v1/widgets', params, options)
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def update(id, params, options)
