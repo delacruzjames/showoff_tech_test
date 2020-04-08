@@ -11,19 +11,19 @@
         <div class="modal-body">
           <div class="fields">
             <%= label_tag 'user[first_name]', "First Name" %>
-            <%= text_field_tag 'user[first_name]' %>
+            <%= text_field_tag 'user[first_name]', "#{current_user.user['first_name']}" %>
           </div>
           <div class="fields">
             <%= label_tag 'user[last_name]', "Last Name" %>
-            <%= text_field_tag 'user[last_name]' %>
+            <%= text_field_tag 'user[last_name]', "#{current_user.user['last_name']}" %>
           </div>
           <div class="fields">
             <%= label_tag 'user[date_of_birth]', "Date of Birth" %>
-            <%= text_field_tag 'user[date_of_birth]' %>
+            <%= text_field_tag 'user[date_of_birth]', "#{current_user.user['date_of_birth']}" %>
           </div>
           <div class="fields">
             <%= label_tag 'user[image_url]', "Image" %>
-            <%= text_field_tag 'user[image_url]' %>
+            <%= text_field_tag 'user[image_url]', "#{current_user.user['image_url']}" %>
           </div>
         </div>
         <div class="modal-footer">
