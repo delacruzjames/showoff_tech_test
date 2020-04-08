@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"username":"totoy101@yahoo.com","password":"password","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352","grant_type":"password"}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 15:01:52 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"f37b91cd704d7aaa2061fb14ba14fdad"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 3ab95e9d-98fa-48c1-82ba-ef1345968886
+      x-runtime:
+      - '0.182893'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"d0f98e220e9056a1a1bf7ac0192b570ce07e98103a4bc4c152d1c958104b0b80","token_type":"Bearer","expires_in":2592000,"refresh_token":"7084771ce4b6625d620f5b35c90dd8bade16f0bc16744563c02d3a6d36000e8f","scope":"basic","created_at":1586358112}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 15:01:52 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"refresh_token":"77c424e398e6780b493d914d4de6f657399b2ce4ab14b1c38e524f3f51051065","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352","grant_type":"refresh_token"}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      Authorization:
+      - Bearer d0f98e220e9056a1a1bf7ac0192b570ce07e98103a4bc4c152d1c958104b0b80
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 15:02:20 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"50bfbd14a5ff4697ea554d4fc6dfb62c"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 456e3366-9247-4db0-a6cc-d98378fd0c9f
+      x-runtime:
+      - '0.042534'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"bd53b7474484859f5d63a7cc57f4e1f785b6eabad597c2c6491fa36887094aa0","token_type":"Bearer","expires_in":2592000,"refresh_token":"4482784c24f56baea8ec1730362fb5c778efd8a159341ec6f71075d8c06581e0","scope":"basic","created_at":1586358141}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 15:02:21 GMT
+recorded_with: VCR 3.0.3

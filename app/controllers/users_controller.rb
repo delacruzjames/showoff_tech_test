@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:change_password, :me, :update]
+  before_action :authenticate_user!, only: [:change_password, :me, :update, :refresh_token]
 
   def create
     @user = ShowOffApi::UserService.create(user: user_permitted_params)
@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     if @request.status == 200
       flash[:success] = @request.message
       session[:token] = @request.token['access_token']
+      session[:rf_token] = @request.token['refresh_token']
     else
       flash[:error] = @request.message
     end
@@ -44,6 +45,21 @@ class UsersController < ApplicationController
       flash[:success] = @request.message
     end
     redirect_to root_path
+  end
+
+  def refresh_token
+    params[:refresh_token] = session[:rf_token]
+    @request = ShowOffApi::AuthenticateService.refresh_token(params, token: session[:token])
+
+    if @request.status == 200
+      session[:token] = @request.token['access_token']
+      session[:rf_token] = @request.token['refresh_token']
+      flash[:success] = @request.message
+      respond_to :html, :json
+    else
+      flash[:error] = @request.message
+    end
+    redirect_to me_users_path
   end
 
   private
