@@ -1,0 +1,15 @@
+<h1>Fullname :<%= current_user.user['name']%></h1>
+<h3>Email : <%= current_user.user['email']%></h3>
+<h3>Photo</h3>
+<div class="img-avatar">
+  <%= image_tag current_user.user["images"]["small_url"] %>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePassword">
+  Change Password
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#resetPassword">
+  Reset Password
+</button>
+
+<%= render "change_password" %>
+<%= render "reset_password" %>

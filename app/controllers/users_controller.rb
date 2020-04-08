@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @user = ShowOffApi::UserService.create(user: user_permitted_params)
     if @user.status == 200
@@ -8,6 +10,10 @@ class UsersController < ApplicationController
       flash[:error] = @user.message
     end
     redirect_to root_path
+  end
+
+  def me
+
   end
 
   private
