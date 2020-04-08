@@ -32,7 +32,7 @@ module ShowOffApi
       end
 
       def update(params, options)
-        response = ShowOffApi::RequestService.put_json('api/v1/users/me', params, options)
+        response = ShowOffApi::RequestService.update('api/v1/users/me', params, options)
         response["status"] == 200 ? success(response) : errors(response)
       end
 

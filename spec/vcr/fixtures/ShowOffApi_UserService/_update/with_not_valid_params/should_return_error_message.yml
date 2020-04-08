@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"username":"totoy101@yahoo.com","password":"password","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352","grant_type":"password"}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 11:31:33 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"f11a9ec78ba5000c79c764072fb7e51d"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - a24d6654-003c-4fa3-b3d7-55413392cad1
+      x-runtime:
+      - '0.185682'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"a748e84766770624955398d52bb50d0ce6d8ae80a989937aebc50a4338349bb9","token_type":"Bearer","expires_in":2592000,"refresh_token":"25f7fb58d8e09afa43da951c99d76d93219b0b16aa5afcf8351304fa4f3d736b","scope":"basic","created_at":1586345493}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 11:31:33 GMT
+- request:
+    method: put
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/me
+    body:
+      encoding: UTF-8
+      string: '{"user":{"first_name":"","last_name":"","date_of_birth":0,"image_url":"https://static.thenounproject.com/png/961-200.png"}}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      Authorization:
+      - Bearer a748e84766770624955398d52bb50d0ce6d8ae80a989937aebc50a4338349bb9
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 11:31:40 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      cache-control:
+      - no-cache
+      x-request-id:
+      - 00224e48-64ff-4357-9a49-c4f996bcc6fb
+      x-runtime:
+      - '0.025286'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":3,"message":"First name can''t be blank","data":null}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 11:31:41 GMT
+recorded_with: VCR 3.0.3

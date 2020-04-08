@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"username":"totoy101@yahoo.com","password":"password","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352","grant_type":"password"}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 11:31:25 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"32ebbe552cafa9c34ad848afdfdaf1b5"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 5c4ecc56-56e9-40fa-bcb6-f76b7ddd5608
+      x-runtime:
+      - '0.185488'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"7b807b8bd662cdb66c36b6c6759488336149a0efced5f45c4e5beb10a4f4abd9","token_type":"Bearer","expires_in":2592000,"refresh_token":"b8d5e3fcc2e4886f4f848a3c5dea2fdcb2bea68d724d69175be3b750c6de84b6","scope":"basic","created_at":1586345485}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 11:31:25 GMT
+- request:
+    method: put
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/me
+    body:
+      encoding: UTF-8
+      string: '{"user":{"first_name":"Another","last_name":"User","date_of_birth":1464083530,"image_url":"https://static.thenounproject.com/png/961-200.png"}}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      Authorization:
+      - Bearer 7b807b8bd662cdb66c36b6c6759488336149a0efced5f45c4e5beb10a4f4abd9
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 11:31:26 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"a165698d2b76cdf06239adb045bf053f"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 1348ceea-c0c7-4e0f-8030-618dfa7341e2
+      x-runtime:
+      - '0.025183'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"user":{"id":4049,"name":"Another
+        User","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/004/049/small/961-200.png?1586345330","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/004/049/medium/961-200.png?1586345330","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/004/049/large/961-200.png?1586345330","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/004/049/original/961-200.png?1586345330"},"first_name":"Another","last_name":"User","date_of_birth":1464083530,"email":"totoy101@yahoo.com","active":true}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 11:31:28 GMT
+recorded_with: VCR 3.0.3

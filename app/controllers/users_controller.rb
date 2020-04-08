@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def update
     @request = ShowOffApi::UserService.update({user: user_permitted_params}, token: session[:token])
-
+    
     if @request.status == 200
       flash[:success] = @request.message
     else
