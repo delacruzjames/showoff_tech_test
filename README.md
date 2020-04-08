@@ -59,7 +59,7 @@ other library that you have experience with.~
 * Functionality
   * Allows Users to interact with the widgets API defined as above, through which it allows them to use
 all actions of the Widget API:
-    * Authentication
+    * ~Authentication~
     * User Management
     * Widget Views & Search
 * Structure
@@ -68,11 +68,11 @@ all actions of the Widget API:
   * ~Allow Users to Login/Logout/Register/Reset Password via Modal.~
   * ~On the landing page, each item in the list of Widgets should include a reference to the User that
 created it.~
-  * Once logged in the User should be able to navigate to a view of their Widgets.
-    * They should also be able to create a new widget from this view.
+  * ~Once logged in the User should be able to navigate to a view of their Widgets.~
+    * ~They should also be able to create a new widget from this view.~
 * Bonus Round:
   * ~Deployed to Heroku.~
-  * Full Test Suite (Minitest or RSpec).
+  * ~Full Test Suite (Minitest or RSpec).~
   * Setup the build process so that it will allow for different sets of environment variables depending on
 the environment it is being deployed to.
 
