@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets/visible?client_id=277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe&client_secret=d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352&term=james
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 06:37:14 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"ed81a5bf71d6b32c67d8ddda1c5095fb"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - d626c0fe-6bdf-48d3-a93c-034d39526eb7
+      x-runtime:
+      - '0.115290'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"widgets":[{"id":526,"name":"James
+        Bond''s Widget","description":"Shaken, Not Stirred ccecece","kind":"visible","user":{"id":675,"name":"James
+        Bond007","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/small/icon-user-default.png?1579206163","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/medium/icon-user-default.png?1579206163","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/large/icon-user-default.png?1579206163","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/original/icon-user-default.png?1579206163"},"first_name":"James","last_name":"Bond007"},"owner":false},{"id":527,"name":"James
+        Bond''s Widget 2","description":"Hello Money Penny fjsififcdcdc","kind":"visible","user":{"id":675,"name":"James
+        Bond007","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/small/icon-user-default.png?1579206163","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/medium/icon-user-default.png?1579206163","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/large/icon-user-default.png?1579206163","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/000/675/original/icon-user-default.png?1579206163"},"first_name":"James","last_name":"Bond007"},"owner":false},{"id":2164,"name":"A
+        Visible James Widget","description":"Widget 009","kind":"visible","user":{"id":3954,"name":"James
+        Martin Dela Cruz","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/954/small/961-200.png?1586091621","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/954/medium/961-200.png?1586091621","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/954/large/961-200.png?1586091621","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/954/original/961-200.png?1586091621"},"first_name":"James
+        Martin","last_name":"Dela Cruz"},"owner":false},{"id":2171,"name":"A Visible
+        James Widget","description":"Widget 009","kind":"visible","user":{"id":3961,"name":"james
+        5 james 5","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"james
+        5","last_name":"james 5"},"owner":false},{"id":2172,"name":"A Visible James
+        Widget","description":"Widget 009","kind":"visible","user":{"id":3968,"name":"James
+        Dela Cru","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"James","last_name":"Dela
+        Cru"},"owner":false},{"id":2176,"name":"A Visible James Widget","description":"Widget
+        009","kind":"visible","user":{"id":3989,"name":"Another11111 User","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/989/small/961-200.png?1586246163","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/989/medium/961-200.png?1586246163","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/989/large/961-200.png?1586246163","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/000/003/989/original/961-200.png?1586246163"},"first_name":"Another11111","last_name":"User"},"owner":false}]}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 06:37:14 GMT
+recorded_with: VCR 3.0.3

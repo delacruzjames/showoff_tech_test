@@ -6,10 +6,10 @@ class PagesController < ApplicationController
   private
 
     def widgets_with_term
-      ShowOffApi::WidgetService.index({term: params[:search]}, token: nil)
+      ShowOffApi::WidgetService.visible(params[:search]).widgets
     end
 
     def widgets_without_term
-      ShowOffApi::WidgetService.index({}, token: nil)
+      ShowOffApi::WidgetService.visible.widgets
     end
 end

@@ -1,7 +1,6 @@
 module ShowOffApi
-  class WidgetService < ShowOffApi::WidgetBaseService
-    attr_accessor :id, :name, :description, :kind,
-                  :owner, :status, :message, :user
+  class WidgetService < ShowOffApi::BaseService
+    attr_accessor :widgets
 
     # belongs_to :user, class_name: 'ShowOffApi::UserService'
 
@@ -10,6 +9,15 @@ module ShowOffApi
     end
 
     class << self
+      def visible(*term)
+        params = {}
+        params[:client_id] = ENV["CLIENT_ID"]
+        params[:client_secret] = ENV["CLIENT_SECRET"]
+        params[:term] = term.empty? ? nil: term.join("")
+        response = ShowOffApi::RequestService.where("api/v1/widgets/visible", params, {})
+        response["status"] == 200 ? success(response) : errors(response)
+      end
+
       def index(params, options)
         params[:client_id] = ENV["CLIENT_ID"]
         params[:client_secret] = ENV["CLIENT_SECRET"]
