@@ -26,6 +26,15 @@ class UsersController < ApplicationController
     redirect_to me_users_path
   end
 
+  def reset_password
+    @request = ShowOffApi::UserService.reset_password({user: user_permitted_params}, token: session[:token])
+    if @request.status == 200
+      session[:token] = nil
+      flash[:success] = @request.message
+    end
+    redirect_to root_path
+  end
+
   private
     def user_permitted_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :current_password, :new_password)

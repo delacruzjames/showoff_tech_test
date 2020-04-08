@@ -16,7 +16,14 @@ module ShowOffApi
 
     class << self
       def success(response)
-        self.new(response.fetch('data').merge("status" => response["status"], "message" => response["message"]))
+        if response.fetch('data').nil?
+          self.new(response)
+        else
+          self.new(response.fetch('data').merge(
+            "status" => response["status"],
+            "message" => response["message"])
+          )
+        end
       end
 
       def errors(response)

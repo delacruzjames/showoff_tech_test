@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :me
       post :change_password
+      post :reset_password
     end
   end
   resources :sessions, only: :create
