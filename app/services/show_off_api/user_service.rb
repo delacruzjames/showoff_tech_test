@@ -20,7 +20,11 @@ module ShowOffApi
 
       def current_user(options)
         response = ShowOffApi::RequestService.where('api/v1/users/me', {}, options)
-        UserService.new(response)
+        if response["status"] == 200
+          UserService.new(response.fetch('data').merge("status" => response["status"], "message" => response["message"]))
+        else
+          BaseService.new(response)
+        end
       end
 
       def update(params, options)
