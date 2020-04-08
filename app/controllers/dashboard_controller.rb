@@ -4,11 +4,6 @@ class DashboardController < ApplicationController
     @widgets = params[:search].present? ? with_term : without_term
   end
 
-  def me
-
-  end
-
-
   private
     def with_term
       ShowOffApi::WidgetService.index(params[:search], token: session[:token]).widgets
