@@ -1,5 +1,41 @@
 @import "bootstrap";
 
 body {
+  background-color: #f0f2f5;
   margin-top: 65px;
+}
+
+
+.navbar-default {
+    background-color: #df3626;
+    border-color: #E7E7E7;
+}
+
+/* Title */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #d4827a;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #d4827a;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #d4827a;
+    background-color: #df3626;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #f0f2f5;
+    background-color: #df3626;
 }
