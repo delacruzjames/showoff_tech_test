@@ -1,72 +1,37 @@
-<div class="widgets-apge">
-  <div class="page-header">
-    <h1>Widgets</h1>
-  </div>
-  <%= render 'widgets/search_form' %>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#widgetForm">
-    Create new Widget
-  </button>
-  <table class="table table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Kind</th>
-        <th scope="col">User</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @widgets.each do |widget| %>
-        <tr>
-          <th scope="row"><%= widget["id"] %></th>
-          <td><%= widget["name"] %></td>
-          <td><%= widget["description"] %></td>
-          <td><%= widget["kind"] %></td>
-          <td><%= widget["user"]['name'] %></td>
-          <td>
-            <%= link_to "Edit", "widgets/#{widget["id"]}", "data-toggle" => 'modal', "data-target" => "##{widget["id"]}-widgetForm" %>
-            <%= link_to "Delete", widget_path(widget["id"]), method: :delete, data: {confirm: "Are you sure?"} %>
-            <%= render 'widgets/edit', widget: widget %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= render 'widgets/search_form' %>
 
-<!-- Modal -->
-<div class="modal fade" id="widgetForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <%= form_tag widgets_path, method: :post do %>
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">NEW WIDGET</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="fields">
-            <%= label_tag 'widget[name]', "Name" %>
-            <%= text_field_tag 'widget[name]' %>
-          </div>
-          <div class="fields">
-            <%= label_tag 'widget[description]', "Description" %>
-            <%= text_field_tag 'widget[description]' %>
-          </div>
-          <div class="fields">
-            <%= label_tag 'widget[kind]', "Kind" %>
-            <%= select_tag 'widget[kind]', options_for_select([["Hidden","hidden"], ["Visible","visible"]]) %>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= submit_tag "SUBMIT", class: "btn btn-primary" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#widgetForm">
+  Create new Widget
+</button>
+
+<table class="table table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Kind</th>
+      <th scope="col">User</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @widgets.each do |widget| %>
+      <tr>
+        <th scope="row"><%= widget["id"] %></th>
+        <td><%= widget["name"] %></td>
+        <td><%= widget["description"] %></td>
+        <td><%= widget["kind"] %></td>
+        <td><%= widget["user"]['name'] %></td>
+        <td>
+          <%= link_to "Edit", "widgets/#{widget["id"]}", "data-toggle" => 'modal', "data-target" => "##{widget["id"]}-widgetForm" %>
+          <%= link_to "Delete", widget_path(widget["id"]), method: :delete, data: {confirm: "Are you sure?"} %>
+          <%= render 'widgets/edit', widget: widget %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= render "widgets/form" %>

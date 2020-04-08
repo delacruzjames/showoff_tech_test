@@ -4,23 +4,18 @@
       <%= form_tag sessions_path, method: :post do %>
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
       <div class="modal-body">
-        <div class="fields">
-          <%= label_tag 'user[username]', "Email" %>
-          <%= text_field_tag 'user[username]' %>
+        <div class="form-group">
+          <%= email_field_tag 'user[username]', nil, class: "form-control", autofocus: true, placeholder: "Email or username" %>
         </div>
-        <div class="fields">
-          <%= label_tag 'user[password]', "Password" %>
-          <%= password_field_tag 'user[password]' %>
+        <div class="form-group">
+          <%= password_field_tag 'user[password]', nil, class: "form-control", placeholder: "Password" %>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= submit_tag "Login", class: "btn btn-primary" %>
+        <%= submit_tag "Login", class: "btn btn-primary"%>
       </div>
       <% end %>
     </div>
