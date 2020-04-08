@@ -17,7 +17,8 @@ module ShowOffApi
 
       def revoke(params)
         response = ShowOffApi::RequestService.post_json('oauth/revoke', params, params)
-        AuthenticateService.new(response)
+        binding.pry
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def refresh_token(params, options)

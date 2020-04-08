@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:change_password, :reset_password, :me]
+  before_action :authenticate_user!, only: [:change_password, :reset_password, :me, :update]
 
   def create
     @user = ShowOffApi::UserService.create(user: user_permitted_params)
@@ -10,6 +10,10 @@ class UsersController < ApplicationController
       flash[:error] = @user.message
     end
     redirect_to root_path
+  end
+
+  def update
+    @request = ShowOffApi::UserService.update({user: user_permitted_params}, token: session[:token])
   end
 
   def me;end
@@ -37,6 +41,15 @@ class UsersController < ApplicationController
 
   private
     def user_permitted_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :current_password, :new_password)
+      params.require(:user).permit(
+        :first_name,
+        :last_name,
+        :email,
+        :password,
+        :current_password,
+        :new_password,
+        :image_url,
+        :date_of_birth
+      )
     end
 end

@@ -33,7 +33,9 @@ module ShowOffApi
       def get_json(root_path, query = {})
         query_string = query.map{|k,v| "#{k}=#{v}"}.join("&")
         path = query.empty? ? root_path : "#{root_path}?#{query_string}"
-        response = api.get(path)
+        response = Rails.cache.fetch(path, expires_in: 1.days, force: false) do
+          api.get(path)
+        end
         [JSON.parse(response.body), response.status]
       end
 

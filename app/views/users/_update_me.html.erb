@@ -1,0 +1,36 @@
+<div class="modal fade" id="updateMe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_tag user_path(current_user.user['id']), method: :put do %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="fields">
+            <%= label_tag 'user[first_name]', "First Name" %>
+            <%= text_field_tag 'user[first_name]' %>
+          </div>
+          <div class="fields">
+            <%= label_tag 'user[last_name]', "Last Name" %>
+            <%= text_field_tag 'user[last_name]' %>
+          </div>
+          <div class="fields">
+            <%= label_tag 'user[date_of_birth]', "Date of Birth" %>
+            <%= text_field_tag 'user[date_of_birth]' %>
+          </div>
+          <div class="fields">
+            <%= label_tag 'user[image_url]', "Image" %>
+            <%= text_field_tag 'user[image_url]' %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= submit_tag "SUBMIT", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

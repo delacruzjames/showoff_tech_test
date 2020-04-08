@@ -33,7 +33,7 @@ module ShowOffApi
 
       def update(params, options)
         response = ShowOffApi::RequestService.put_json('api/v1/users/me', params, options)
-        UserService.new(response)
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def check_email(params)

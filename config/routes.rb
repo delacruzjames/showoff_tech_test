@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
   match "/dashboard", to: 'dashboard#index', via: [:get, :post]
-  resources :users, only: [:index, :create] do
+  resources :users, only: [:index, :create, :update] do
     collection do
       get :me
       post :change_password
