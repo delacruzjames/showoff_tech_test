@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"username":"totoy101@yahoo.com","password":"password","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352","grant_type":"password"}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 05:23:33 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"f88d568f2b32aa9c6d452a5551d0fe15"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - b927bf17-f0dc-4370-b9eb-1aef0b1cd26c
+      x-runtime:
+      - '0.173264'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"fc390a6f9d52caed25d3b554db75f97eaad0d6c8e96cad56a7f76275e22b563e","token_type":"Bearer","expires_in":2592000,"refresh_token":"45119762160780834ed2e4ba0d6fccf6959c5448777a344fb4091a43bf581773","scope":"basic","created_at":1586323414}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 05:23:34 GMT
+recorded_with: VCR 3.0.3

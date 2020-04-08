@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @session = ShowOffApi::AuthenticateService.login(user_permitted_params)
     if @session.status == 200
       flash[:notice] = @session.message
-      session[:token] = @session.access_token
+      session[:token] = @session.token['access_token']
       redirect_to dashboard_path
     else
       flash[:error] = @session.message

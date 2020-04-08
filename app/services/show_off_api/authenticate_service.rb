@@ -1,7 +1,6 @@
 module ShowOffApi
   class AuthenticateService < ShowOffApi::BaseService
-    attr_accessor :access_token, :token_type, :expires_in,
-                  :refresh_token, :scope, :create_at, :message, :status
+    attr_accessor :token
 
     def initialize(args={})
       super(args)
@@ -13,7 +12,7 @@ module ShowOffApi
         params[:client_secret] = ENV["CLIENT_SECRET"]
         params[:grant_type] = "password"
         response = ShowOffApi::RequestService.create('oauth/token', params, {})
-        AuthenticateService.new(response)
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def revoke(params)

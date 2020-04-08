@@ -33,7 +33,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">Widgets</a></li>
           <% if user_signed_in? %>
-            <li><%= link_to current_user.email, "#" %><li>
+            <li><%= link_to current_user.user["email"], "#" %><li>
             <li><%= link_to "Sign Out", sign_out_path, method: :delete %><li>
           <% else %>
             <li><a href="#" data-toggle="modal" data-target="#loginForm">Login</a><li>

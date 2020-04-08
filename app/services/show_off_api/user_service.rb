@@ -1,9 +1,6 @@
 module ShowOffApi
   class UserService < ShowOffApi::BaseService
-    attr_accessor :code, :message, :id, :name, :small_url, :medium_url,
-                  :first_name, :last_name, :date_of_birth,
-                  :email, :access_token, :refresh_token, :active,
-                  :status, :message
+    attr_accessor :user, :token
 
     def initialize(args={})
       super(args)
@@ -14,12 +11,12 @@ module ShowOffApi
         params[:client_id] = ENV["CLIENT_ID"]
         params[:client_secret] = ENV["CLIENT_SECRET"]
         response = ShowOffApi::RequestService.create('api/v1/users', params, {})
-        UserService.new(response)
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def current_user(options)
         response = ShowOffApi::RequestService.where('api/v1/users/me', {}, options)
-        UserService.new(response)
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def update(params, options)

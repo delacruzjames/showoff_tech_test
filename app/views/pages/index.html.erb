@@ -12,11 +12,11 @@
   <tbody>
     <% @widgets.each do |widget| %>
       <tr>
-        <th scope="row"><%= widget.id %></th>
-        <td><%= widget.name %></td>
-        <td><%= widget.description %></td>
-        <td><%= widget.kind %></td>
-        <td><%= widget.user['name'] %></td>
+        <th scope="row"><%= widget["id"] %></th>
+        <td><%= widget["name"] %></td>
+        <td><%= widget["description"] %></td>
+        <td><%= widget["kind"] %></td>
+        <td><%= widget["user"]['name'] %></td>
       </tr>
     <% end %>
   </tbody>

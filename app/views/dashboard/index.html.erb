@@ -21,14 +21,14 @@
     <tbody>
       <% @widgets.each do |widget| %>
         <tr>
-          <th scope="row"><%= widget.id %></th>
-          <td><%= widget.name %></td>
-          <td><%= widget.description %></td>
-          <td><%= widget.kind %></td>
-          <td><%= widget.user['name'] %></td>
+          <th scope="row"><%= widget["id"] %></th>
+          <td><%= widget["name"] %></td>
+          <td><%= widget["description"] %></td>
+          <td><%= widget["kind"] %></td>
+          <td><%= widget["user"]['name'] %></td>
           <td>
-            <%= link_to "Edit", "widgets/#{widget.id}", "data-toggle" => 'modal', "data-target" => "##{widget.id}-widgetForm" %>
-            <%= link_to "Delete", widget_path(widget.id), method: :delete, data: {confirm: "Are you sure?"} %>
+            <%= link_to "Edit", "widgets/#{widget["id"]}", "data-toggle" => 'modal', "data-target" => "##{widget["id"]}-widgetForm" %>
+            <%= link_to "Delete", widget_path(widget["id"]), method: :delete, data: {confirm: "Are you sure?"} %>
             <%= render 'widgets/edit', widget: widget %>
           </td>
         </tr>

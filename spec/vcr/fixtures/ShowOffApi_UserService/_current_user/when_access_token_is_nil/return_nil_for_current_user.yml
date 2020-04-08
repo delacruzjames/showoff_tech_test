@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users/me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+  response:
+    status:
+      code: 401
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 04:58:38 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      cache-control:
+      - no-store
+      pragma:
+      - no-cache
+      www-authenticate:
+      - Bearer realm="Doorkeeper", error="invalid_token", error_description="The access
+        token is invalid"
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      x-request-id:
+      - ee574907-4b45-42cd-bd82-e6f27bfa1a80
+      x-runtime:
+      - '0.004452'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":10,"message":"Your session has expired. Please login again
+        to continue.","data":null}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 04:58:39 GMT
+recorded_with: VCR 3.0.3

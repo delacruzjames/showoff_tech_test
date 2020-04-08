@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/oauth/token
+    body:
+      encoding: UTF-8
+      string: '{"username":"totoy101@yahoo.com","password":"password","client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352","grant_type":"password"}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 07:13:52 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"e2a41a3a934571d03bf281317091b66a"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 4bccdefb-4163-47ae-98da-0c68fa05650a
+      x-runtime:
+      - '0.258665'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"token":{"access_token":"fb5122b7c7ddc472184499573c8460fda817800fe4be420037624f28d24becf0","token_type":"Bearer","expires_in":2592000,"refresh_token":"5e1f9f7d20e9e8579767a9c8fb5e30dc2c7b845bb55bed66fe25b9d1b75cc59f","scope":"basic","created_at":1586330032}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 07:13:52 GMT
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/widgets
+    body:
+      encoding: UTF-8
+      string: '{"widget":{"name":"A Hidden Widget New","description":"Widget 1 New","kind":"hidden"}}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      Authorization:
+      - Bearer fb5122b7c7ddc472184499573c8460fda817800fe4be420037624f28d24becf0
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 07:13:52 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"2fced3c5cad5eb9f7ab120c8f0ddcf71"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 728e9e73-fe4c-4caf-a93b-7de4fb8c3b71
+      x-runtime:
+      - '0.165107'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"widget":{"id":2216,"name":"A
+        Hidden Widget New","description":"Widget 1 New","kind":"hidden","user":{"id":4049,"name":"totoy
+        totoy","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"totoy","last_name":"totoy","date_of_birth":null,"email":"totoy101@yahoo.com","active":true},"owner":true}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 07:13:53 GMT
+recorded_with: VCR 3.0.3
