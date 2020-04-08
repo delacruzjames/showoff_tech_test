@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:change_password, :reset_password, :me]
 
   def create
     @user = ShowOffApi::UserService.create(user: user_permitted_params)
