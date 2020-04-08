@@ -26,7 +26,7 @@ module ShowOffApi
       end
 
       def success(response, status)
-        success = { status: status, message: response["message"] }
+        success = { "status" => status, "message" => response["message"] }
         response.merge(success)
       end
 
