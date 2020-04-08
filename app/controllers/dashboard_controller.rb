@@ -11,10 +11,10 @@ class DashboardController < ApplicationController
 
   private
     def with_term
-      ShowOffApi::WidgetService.index({term: params[:search]}, token: session[:token])
+      ShowOffApi::WidgetService.index(params[:search], token: session[:token]).widgets
     end
 
     def without_term
-      ShowOffApi::WidgetService.index({}, token: session[:token])
+      ShowOffApi::WidgetService.index(token: session[:token]).widgets
     end
 end

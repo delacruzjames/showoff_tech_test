@@ -18,15 +18,13 @@ module ShowOffApi
         response["status"] == 200 ? success(response) : errors(response)
       end
 
-      def index(params, options)
+      def index(*term, options)
+        params = {}
         params[:client_id] = ENV["CLIENT_ID"]
         params[:client_secret] = ENV["CLIENT_SECRET"]
-        if options[:token].present?
-          response = ShowOffApi::RequestService.where("api/v1/users/me/widgets", params, options)
-        else
-          response = ShowOffApi::RequestService.where("api/v1/widgets/visible", params, options)
-        end
-        response.fetch('data').fetch('widgets', []).map{|widget| WidgetService.new(widget)}
+        params[:term] = term.empty? ? nil: term.join("")
+        response = ShowOffApi::RequestService.where("api/v1/widgets", params, options)
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def save(params, options)
@@ -36,11 +34,13 @@ module ShowOffApi
 
       def update(id, params, options)
         params[:widget] = params[:widget].except('id', 'kind')
-        ShowOffApi::RequestService.update("api/v1/widgets/#{id}", params, options)
+        response = ShowOffApi::RequestService.update("api/v1/widgets/#{id}", params, options)
+        response["status"] == 200 ? success(response) : errors(response)
       end
 
       def destroy(id, options)
-        ShowOffApi::RequestService.delete("api/v1/widgets/#{id}", options)
+        response = ShowOffApi::RequestService.delete("api/v1/widgets/#{id}", options)
+        response["status"] == 200 ? success(response) : errors(response)
       end
     end
   end

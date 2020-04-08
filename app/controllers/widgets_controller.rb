@@ -1,20 +1,20 @@
 class WidgetsController < ApplicationController
   def create
     @widget = ShowOffApi::WidgetService.save(widget_permitted_params, token: session[:token])
-    @widget[:status] == 200 ? flash[:success] = @widget[:message] : flash[:error] = @widget[:message]
+    @widget.status == 200 ? flash[:success] = @widget.message : flash[:error] = @widget.message
     redirect_to dashboard_path
   end
 
   def update
     widget_params = {widget: widget_permitted_params}
     @widget = ShowOffApi::WidgetService.update(widget_permitted_params['id'],widget_params,token: session[:token])
-    @widget[:status] == 200 ? flash[:success] = @widget[:message] : flash[:error] = @widget[:message]
+    @widget.status == 200 ? flash[:success] = @widget.message : flash[:error] = @widget.message
     redirect_to dashboard_path
   end
 
   def destroy
     @widget = ShowOffApi::WidgetService.destroy(params[:id], token: session[:token])
-    flash[:message] = @widget[:mesage] if @widget[:status] == 200
+    flash[:success] = "Success" if @widget.status == 200
     redirect_to dashboard_path
   end
 
