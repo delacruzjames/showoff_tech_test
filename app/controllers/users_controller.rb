@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:change_password, :reset_password, :me, :update]
+  before_action :authenticate_user!, only: [:change_password, :me, :update]
 
   def create
     @user = ShowOffApi::UserService.create(user: user_permitted_params)
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def update
     @request = ShowOffApi::UserService.update({user: user_permitted_params}, token: session[:token])
-    
+
     if @request.status == 200
       flash[:success] = @request.message
     else
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def reset_password
-    @request = ShowOffApi::UserService.reset_password({user: user_permitted_params}, token: session[:token])
+    @request = ShowOffApi::UserService.reset_password({user: user_permitted_params}, {})
     if @request.status == 200
       session[:token] = nil
       flash[:success] = @request.message
