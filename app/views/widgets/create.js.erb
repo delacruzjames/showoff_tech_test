@@ -1,0 +1,3 @@
+$("#widgetForm").modal('hide');
+$('#widget-form input[type="text"]').val('')
+$("table#widgets tbody").prepend("<%= escape_javascript render(:partial => 'dashboard/widget', :locals => { widget: @widget.widget }) %>");

@@ -2,7 +2,6 @@ class WidgetsController < ApplicationController
   def create
     @widget = ShowOffApi::WidgetService.save(widget_permitted_params, token: session[:token])
     @widget.status == 200 ? flash[:success] = @widget.message : flash[:error] = @widget.message
-    redirect_to dashboard_path
   end
 
   def update
