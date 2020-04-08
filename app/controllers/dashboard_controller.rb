@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  before_action :authenticate_user!
   def index
     @widgets = params[:search].present? ? with_term : without_term
   end

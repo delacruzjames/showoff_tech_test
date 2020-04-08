@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://showoff-rails-react-production.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"first_name":"totoy","last_name":"totoy","email":"totoy101@yahoo.com","password":"password"},"client_id":"277ef29692f9a70d511415dc60592daf4cf2c6f6552d3e1b769924b2f2e2e6fe","client_secret":"d6106f26e8ff5b749a606a1fba557f44eb3dca8f48596847770beb9b643ea352"}'
+    headers:
+      Accept-Version:
+      - '1.0'
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Cowboy
+      date:
+      - Wed, 08 Apr 2020 03:22:15 GMT
+      connection:
+      - keep-alive
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      x-content-type-options:
+      - nosniff
+      content-type:
+      - application/json; charset=utf-8
+      vary:
+      - Accept-Encoding, Origin
+      etag:
+      - W/"bd2f92e61521243d2ce34fc1c8f97bb1"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 35dd648b-ef96-478e-8d3f-5db4ea1cfafc
+      x-runtime:
+      - '0.176227'
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":0,"message":"Success","data":{"user":{"id":4049,"name":"totoy
+        totoy","images":{"small_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","medium_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","large_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg","original_url":"https://showoff-rails-react-api-production.s3.amazonaws.com/users/images/missing/missing.jpg"},"first_name":"totoy","last_name":"totoy","date_of_birth":null,"email":"totoy101@yahoo.com","active":true},"token":{"access_token":"2bec0fabf7318d29fc479a347bb5c879a7215e16eaa75ed1438a9e0b10e396ae","token_type":"Bearer","expires_in":2592000,"refresh_token":"a596e6cf96296fbcedb4fdf61dc90ef88906fd40b70832adbb54a93234d6fc51","scope":"basic","created_at":1586316136}}}'
+    http_version: 
+  recorded_at: Wed, 08 Apr 2020 03:22:16 GMT
+recorded_with: VCR 3.0.3
