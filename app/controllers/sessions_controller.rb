@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
     if @session.status == 200
       flash[:notice] = @session.message
       session[:token] = @session.token['access_token']
+      session[:rf_token] = @session.token['refresh_token']
       redirect_to dashboard_path
     else
       flash[:error] = @session.message

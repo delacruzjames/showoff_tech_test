@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :me
       post :change_password
       post :reset_password
+      post :refresh_token
     end
   end
   resources :sessions, only: :create
