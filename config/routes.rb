@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create] do
     collection do
       get :me
+      post :change_password
     end
   end
   resources :sessions, only: :create

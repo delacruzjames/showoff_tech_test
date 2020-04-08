@@ -14,6 +14,11 @@ module ShowOffApi
         response["status"] == 200 ? success(response) : errors(response)
       end
 
+      def change_password(params, options)
+        response = ShowOffApi::RequestService.create('api/v1/users/me/password', params, options)
+        response["status"] == 200 ? success(response) : errors(response)
+      end
+
       def current_user(options)
         response = ShowOffApi::RequestService.where('api/v1/users/me', {}, options)
         response["status"] == 200 ? success(response) : errors(response)
