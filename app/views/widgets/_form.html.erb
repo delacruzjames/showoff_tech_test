@@ -3,22 +3,17 @@
     <div class="modal-content">
       <%= form_tag widgets_path, method: :post do %>
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">NEW WIDGET</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h5 class="modal-title" id="exampleModalLabel">New Widget Form</h5>
         </div>
         <div class="modal-body">
-          <div class="fields">
-            <%= label_tag 'widget[name]', "Name" %>
-            <%= text_field_tag 'widget[name]' %>
+          <div class="form-group">
+            <%= text_field_tag 'widget[name]', nil, class: "form-control", placeholder: "Widget Name" %>
           </div>
-          <div class="fields">
-            <%= label_tag 'widget[description]', "Description" %>
-            <%= text_field_tag 'widget[description]' %>
+          <div class="form-group">
+            <%= text_field_tag 'widget[description]', nil, class: "form-control", placeholder: "Description" %>
           </div>
-          <div class="fields">
-            <%= label_tag 'widget[kind]', "Kind" %>
+          <div class="form-group">
+            <%= label_tag 'widget[kind]', "Kind", class: "input-group-text" %>
             <%= select_tag 'widget[kind]', options_for_select([["Hidden","hidden"], ["Visible","visible"]]) %>
           </div>
         </div>
