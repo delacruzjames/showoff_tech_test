@@ -55,13 +55,13 @@ Please build a Ruby on Rails application which fulfils the following requirement
   * ~Use any Gems/techniques you find useful.~
   * ~We would recommend using the rest-client Gem for building your API client, but feel free to use any
 other library that you have experience with.~
-  * Include a thorough Readme describing how to build/run your application.
-* Functionality
-  * Allows Users to interact with the widgets API defined as above, through which it allows them to use
-all actions of the Widget API:
+  * ~Include a thorough Readme describing how to build/run your application.~
+* ~Functionality~
+  * ~Allows Users to interact with the widgets API defined as above, through which it allows them to use
+all actions of the Widget API:~
     * ~Authentication~
-    * User Management
-    * Widget Views & Search
+    * ~User Management~
+    * ~Widget Views & Search~
 * Structure
   * ~Landing Page should present a list of Visible Widgets~
     * ~This should be searchable, using the API.~
@@ -70,11 +70,11 @@ all actions of the Widget API:
 created it.~
   * ~Once logged in the User should be able to navigate to a view of their Widgets.~
     * ~They should also be able to create a new widget from this view.~
-* Bonus Round:
+* ~Bonus Round:~
   * ~Deployed to Heroku.~
   * ~Full Test Suite (Minitest or RSpec).~
-  * Setup the build process so that it will allow for different sets of environment variables depending on
-the environment it is being deployed to.
+  * ~Setup the build process so that it will allow for different sets of environment variables depending on
+the environment it is being deployed to.~
 
 ## General
 * Please use Git to track your progress through the above tasks.
