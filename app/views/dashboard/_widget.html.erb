@@ -9,4 +9,5 @@
     <%= link_to "Delete", widget_path(widget["id"]), method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
     <%= render 'widgets/edit', widget: widget %>
   </td>
+  <td id="widget-<%= widget['id']%>-status" class="bg-info text-center">OLD</td>
 </tr>
