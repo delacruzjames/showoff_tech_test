@@ -14,7 +14,6 @@ class WidgetsController < ApplicationController
   def destroy
     @widget = ShowOffApi::WidgetService.destroy(params[:id], token: session[:token])
     flash[:success] = "Success" if @widget.status == 200
-    redirect_to dashboard_path
   end
 
   private

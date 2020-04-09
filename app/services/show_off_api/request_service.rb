@@ -1,6 +1,10 @@
 module ShowOffApi
   class RequestService < ShowOffApi::BaseService
     class << self
+      def remove(resource_path, params = {}, options = {})
+        response, status = delete(resource_path, params, options)
+        status == 200 ? success(response, status) : errors(response, status)
+      end
       def update(resource_path, params = {}, options = {})
         response, status = put_json(resource_path, params, options)
         status == 200 ? success(response, status) : errors(response, status)
@@ -46,7 +50,7 @@ module ShowOffApi
         [JSON.parse(response.body), response.status]
       end
 
-      def delete(path, options={})
+      def delete(path, params={}, options={})
         response = api_with_token(options[:token]).delete do |req|
           req.url path
           req.headers['Content-Type'] = 'application/json'

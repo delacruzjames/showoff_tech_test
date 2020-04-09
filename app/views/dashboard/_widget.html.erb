@@ -1,4 +1,4 @@
-<tr>
+<tr id="widget-<%= widget['id'] %>-data">
   <th scope="row"><%= widget["id"] %></th>
   <td><%= widget["name"] %></td>
   <td><%= widget["description"] %></td>
@@ -6,7 +6,7 @@
   <td><%= widget["user"]['name'] %></td>
   <td>
     <%= link_to "Edit", "widgets/#{widget["id"]}", "data-toggle" => 'modal', "data-target" => "##{widget["id"]}-widgetForm" %>
-    <%= link_to "Delete", widget_path(widget["id"]), method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= link_to "Delete", widget_path(widget["id"]), method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
     <%= render 'widgets/edit', widget: widget %>
   </td>
 </tr>
