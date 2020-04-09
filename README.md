@@ -90,9 +90,27 @@ the environment it is being deployed to.
 
 ## To run this application
 
+## Prerequisites
+
+* Ruby (check `.ruby-version` for the version required)
+
+## Getting Started
+
+If you haven't already start by cloning the repository
+
 ```
 git clone git@github.com:delacruzjames/showoff_tech_test.git
-cd showoff_tect_test
+cd showoff_tech_test
+```
+
+To setup the project ensure you have the prerequisites installed then simply run
+
+```
 bin/setup
-rails server
+```
+
+once setup is complete, run
+
+```
+bin/rails server
 ```
