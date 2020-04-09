@@ -86,6 +86,13 @@ the environment it is being deployed to.
 # Best of luck
 ## OSU!
 
-# ========================================================================================================
+# =========================================
 
 ## To run this application
+
+```
+git clone git@github.com:delacruzjames/showoff_tech_test.git
+cd showoff_tect_test
+bin/setup
+rails server
+```
