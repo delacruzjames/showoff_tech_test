@@ -5,7 +5,7 @@
   <td><%= widget["kind"] %></td>
   <td><%= widget["user"]['name'] %></td>
   <td>
-    <%= link_to "Edit", "widgets/#{widget["id"]}", "data-toggle" => 'modal', "data-target" => "##{widget["id"]}-widgetForm" %>
+    <%= link_to "Edit", "#", "data-toggle" => 'modal', "data-target" => "##{widget["id"]}-widgetForm" %>
     <%= link_to "Delete", widget_path(widget["id"]), method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
     <%= render 'widgets/edit', widget: widget %>
   </td>
